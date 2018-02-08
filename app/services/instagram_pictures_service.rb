@@ -12,6 +12,7 @@ class InstagramPicturesService
     InstagramApi.user.recent_media["data"].map{ | picture | map_media(picture) }
   end
 
+  private
   def map_media(picture)
     { image_url: picture.dig("images", "standard_resolution", "url"),
       date: DateTime.strptime(picture.created_time,'%s'),

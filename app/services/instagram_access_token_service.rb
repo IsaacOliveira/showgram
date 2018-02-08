@@ -1,10 +1,10 @@
-class RequestInstagramAccessToken
+class InstagramAccessTokenService
 
   def initialize(code)
     @code = code
   end
 
-  def request
+  def request_token
     params = {code: @code,
               redirect_uri: APP_CONFIG::INSTAGRAM::APP_REDIRECT_URL,
               grant_type: APP_CONFIG::INSTAGRAM::GRANT_TYPE,

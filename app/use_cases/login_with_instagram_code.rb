@@ -5,7 +5,7 @@ class LoginWithInstagramCode
   end
 
   def execute
-    response = RequestInstagramAccessToken.new(@code).request
+    response = InstagramAccessTokenService.new(@code).request_token
     User.build_from_instagram_response(response)
   end
 end

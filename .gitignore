@@ -13,6 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 
+/config/app.yml
 /node_modules
 /yarn-error.log
 

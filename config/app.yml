@@ -1,0 +1,8 @@
+production:
+  redirect_uri: "https://showoffgram.herokuapp.com/sessions"
+  client_secret: "< %= ENV['CLIENT_SECRET'] %>"
+  client_id: "< %= ENV['CLIENT_ID'] %>"
+development:
+  redirect_uri: "http://localhost:3000/sessions"
+  client_secret: "< %= ENV['CLIENT_SECRET'] %>"
+  client_id: "< %= ENV['CLIENT_ID'] %>"

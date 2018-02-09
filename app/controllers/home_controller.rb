@@ -1,7 +1,12 @@
 class HomeController < ApplicationController
 
   def index
-    @url = APP_CONFIG::INSTAGRAM::AUTHORIZE_URL
+    if logged_in?
+      @user = current_user
+      @pictures = GetUserPictures.new(@user).execute
+    else
+      @url = APP_CONFIG::INSTAGRAM::AUTHORIZE_URL
+    end
   end
 
 

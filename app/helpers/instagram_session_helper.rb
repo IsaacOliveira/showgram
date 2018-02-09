@@ -13,6 +13,7 @@ module InstagramSessionHelper
   end
 
   def log_out
+    @current_user = nil
     session.delete(:user_session)
   end
 

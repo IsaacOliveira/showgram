@@ -1,13 +1,13 @@
-<main role="main">
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <div class="container">
-      <h2 class="display-4">ShowGram</h2>
+<div class="container-fluid gallery-container">
+  <h1>ShowoffGram</h1>
+  <p class="page-description text-center">An example of Instagram integration</p>
+  <% if logged_in? %>
 
-        <p>Click on the button to login to instagram</p>
-        <%= link_to "Enter with Instagram", @url, class: "btn btn-primary" %>
-
+    <%= render partial: "galery" %>
+  <% else %>
+    <div class="mx-auto login-container">
+      <%= link_to "Enter with Instagram", @url, class: "btn btn-primary" %>
     </div>
+  <% end %>
   </div>
-  <div id="alert-area"></div>
-</main>
+</div>

@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Showgram</title>
+    <title>ShowoffGram</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Droid+Sans:400,700'%>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <%= link_to "Home", root_path, class: "navbar-brand" %>
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <% if logged_in? %>
+        <span class="navbar-text"><%= @user.username %></span>
+        <%= image_tag @user.profile_picture, width: 30, height: 30, class: "mx-2" %>
+        <%= link_to 'Logout', sessions_path, method: :delete, class: "btn btn-outline-secondary", data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </nav>
+    <main>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+    </main>
   </body>
 </html>

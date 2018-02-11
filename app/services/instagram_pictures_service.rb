@@ -3,7 +3,7 @@ class InstagramPicturesService
   def initialize(user)
     InstagramApi.config do |config|
       config.access_token = user.access_token
-      config.client_id = APP_CONFIG::INSTAGRAM::CLIENT_SECRET
+      config.client_id = APP_CONFIG::INSTAGRAM::CLIENT_ID
       config.client_secret = APP_CONFIG::INSTAGRAM::CLIENT_SECRET
     end
   end

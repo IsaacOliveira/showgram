@@ -1,24 +1,27 @@
-# README
+# ShowGram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application that uses the instagram API to show the users photos.
 
-Things you may want to cover:
+# Running the project
 
-* Ruby version
+A running instance of project is available at: https://showoffgram.herokuapp.com
 
-* System dependencies
+To run local will just need to clone the project then run:
 
-* Configuration
+```
+bundle install
+rake db:setup
+rails s
+```
 
-* Database creation
+You should set the Instagram API Configurations and the redirect url in the ENV, (ENV['CLIENT_SECRET'],  ENV['CLIENT_ID'], ENV['REDIRECT_URL'])
+Then access: http://localhost:3000
 
-* Database initialization
+# Running the Specs
 
-* How to run the test suite
+After you run bundle, you are ready to run the specs
+Them to run all the specs:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rspec .
+```
